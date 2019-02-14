@@ -1,0 +1,80 @@
+header {
+    background-color: rgb(0,0,0);
+    height: 50px;
+    width: auto;
+    margin-top: 0;
+}
+
+header h1{
+    margin: 0;
+    color: rgb(255, 255, 255);
+}
+
+.shadow {
+    background-color: rgba(0, 0, 0, 0.35);
+    height: 3px;
+    width: auto;
+}
+
+body {
+    background-color: rgb(95, 95, 95);
+    height: 100%
+    padding: 0;
+    margin: 0;
+}
+
+.box_left {
+    padding: 5px;
+    width: 15%;
+    height: 1000px;
+    float: left;
+    background-color: rgb(200, 200, 200);
+}
+
+.box_right {
+    width: 80%;
+    height: 900px;
+    margin-top: 2%;
+    margin-right: 2%;
+    float: right;
+    background-color: rgb(255, 255, 255);
+}
+
+.box_left p {
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+    font-size: 25px;
+}
+
+.input {
+    margin: 0;
+    padding: 0:
+    height: auto;
+    font-size: 20px;
+}
+
+.btn-square-shadow {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square-shadow:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.2);/*影を小さく*/
+  border-bottom: none;
+}
+
+.box_right textarea {
+    height: 100%;
+    width: 100%;
+    font-size: 20px;
+}

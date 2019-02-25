@@ -3,27 +3,156 @@ if (typeof kotlin === 'undefined') {
 }
 var SampleKotlinJS = function (_, Kotlin) {
   'use strict';
-  var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var throwUPAE = Kotlin.throwUPAE;
   var throwCCE = Kotlin.throwCCE;
+  var Kind_OBJECT = Kotlin.Kind.OBJECT;
+  var Enum = Kotlin.kotlin.Enum;
+  var Kind_CLASS = Kotlin.Kind.CLASS;
+  var throwISE = Kotlin.throwISE;
+  var println = Kotlin.kotlin.io.println_s8jyv4$;
+  var toString = Kotlin.toString;
   var equals = Kotlin.equals;
   var trimIndent = Kotlin.kotlin.text.trimIndent_pdl1vz$;
-  var Kind_CLASS = Kotlin.Kind.CLASS;
+  ElementsList.prototype = Object.create(Enum.prototype);
+  ElementsList.prototype.constructor = ElementsList;
+  function Elements() {
+    Elements_instance = this;
+    this.mElements_0 = null;
+    this.input1Element_s9qmro$_0 = this.input1Element_s9qmro$_0;
+    this.input2Element_cv9ef1$_0 = this.input2Element_cv9ef1$_0;
+    this.selectorElement_vputl8$_0 = this.selectorElement_vputl8$_0;
+  }
+  Object.defineProperty(Elements.prototype, 'input1Element_0', {
+    get: function () {
+      if (this.input1Element_s9qmro$_0 == null)
+        return throwUPAE('input1Element');
+      return this.input1Element_s9qmro$_0;
+    },
+    set: function (input1Element) {
+      this.input1Element_s9qmro$_0 = input1Element;
+    }
+  });
+  Object.defineProperty(Elements.prototype, 'input2Element_0', {
+    get: function () {
+      if (this.input2Element_cv9ef1$_0 == null)
+        return throwUPAE('input2Element');
+      return this.input2Element_cv9ef1$_0;
+    },
+    set: function (input2Element) {
+      this.input2Element_cv9ef1$_0 = input2Element;
+    }
+  });
+  Object.defineProperty(Elements.prototype, 'selectorElement_0', {
+    get: function () {
+      if (this.selectorElement_vputl8$_0 == null)
+        return throwUPAE('selectorElement');
+      return this.selectorElement_vputl8$_0;
+    },
+    set: function (selectorElement) {
+      this.selectorElement_vputl8$_0 = selectorElement;
+    }
+  });
+  Elements.prototype.getElements = function () {
+    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3;
+    if (Kotlin.isType(this.mElements_0, Elements)) {
+      tmp$_3 = Kotlin.isType(tmp$ = this.mElements_0, Elements) ? tmp$ : throwCCE();
+    }
+     else {
+      this.getElements_0(Kotlin.isType(tmp$_0 = ElementsList$INPUT1_getInstance().value[0], HTMLInputElement) ? tmp$_0 : throwCCE(), Kotlin.isType(tmp$_1 = ElementsList$INPUT2_getInstance().value[0], HTMLInputElement) ? tmp$_1 : throwCCE(), ElementsList$SELECTOR_getInstance().value);
+      tmp$_3 = Kotlin.isType(tmp$_2 = this.mElements_0, Elements) ? tmp$_2 : throwCCE();
+    }
+    return tmp$_3;
+  };
+  Elements.prototype.getElements_0 = function (input1, input2, selector) {
+    var tmp$, tmp$_0, tmp$_1, tmp$_2;
+    this.input1Element_0 = input1;
+    this.input2Element_0 = input2;
+    if ((Kotlin.isType(tmp$ = selector[0], HTMLInputElement) ? tmp$ : throwCCE()).checked) {
+      tmp$_2 = Kotlin.isType(tmp$_0 = selector[0], HTMLInputElement) ? tmp$_0 : throwCCE();
+    }
+     else {
+      tmp$_2 = Kotlin.isType(tmp$_1 = selector[1], HTMLInputElement) ? tmp$_1 : throwCCE();
+    }
+    this.selectorElement_0 = tmp$_2;
+    this.mElements_0 = this;
+  };
+  var LinkedHashMap_init = Kotlin.kotlin.collections.LinkedHashMap_init_q3lmfv$;
+  Elements.prototype.getValues = function () {
+    var valuesMap = LinkedHashMap_init();
+    valuesMap.put_xwzc9p$('input1', this.input1Element_0.value);
+    valuesMap.put_xwzc9p$('input2', this.input2Element_0.value);
+    valuesMap.put_xwzc9p$('selector', this.selectorElement_0.value);
+    return valuesMap;
+  };
+  Elements.$metadata$ = {
+    kind: Kind_OBJECT,
+    simpleName: 'Elements',
+    interfaces: []
+  };
+  var Elements_instance = null;
+  function Elements_getInstance() {
+    if (Elements_instance === null) {
+      new Elements();
+    }
+    return Elements_instance;
+  }
+  function ElementsList(name, ordinal, value) {
+    Enum.call(this);
+    this.value = value;
+    this.name$ = name;
+    this.ordinal$ = ordinal;
+  }
+  function ElementsList_initFields() {
+    ElementsList_initFields = function () {
+    };
+    ElementsList$INPUT1_instance = new ElementsList('INPUT1', 0, document.getElementsByName('input1'));
+    ElementsList$INPUT2_instance = new ElementsList('INPUT2', 1, document.getElementsByName('input2'));
+    ElementsList$SELECTOR_instance = new ElementsList('SELECTOR', 2, document.getElementsByName('selector'));
+  }
+  var ElementsList$INPUT1_instance;
+  function ElementsList$INPUT1_getInstance() {
+    ElementsList_initFields();
+    return ElementsList$INPUT1_instance;
+  }
+  var ElementsList$INPUT2_instance;
+  function ElementsList$INPUT2_getInstance() {
+    ElementsList_initFields();
+    return ElementsList$INPUT2_instance;
+  }
+  var ElementsList$SELECTOR_instance;
+  function ElementsList$SELECTOR_getInstance() {
+    ElementsList_initFields();
+    return ElementsList$SELECTOR_instance;
+  }
+  ElementsList.$metadata$ = {
+    kind: Kind_CLASS,
+    simpleName: 'ElementsList',
+    interfaces: [Enum]
+  };
+  function ElementsList$values() {
+    return [ElementsList$INPUT1_getInstance(), ElementsList$INPUT2_getInstance(), ElementsList$SELECTOR_getInstance()];
+  }
+  ElementsList.values = ElementsList$values;
+  function ElementsList$valueOf(name) {
+    switch (name) {
+      case 'INPUT1':
+        return ElementsList$INPUT1_getInstance();
+      case 'INPUT2':
+        return ElementsList$INPUT2_getInstance();
+      case 'SELECTOR':
+        return ElementsList$SELECTOR_getInstance();
+      default:throwISE('No enum constant ElementsList.' + name);
+    }
+  }
+  ElementsList.valueOf_61zpoe$ = ElementsList$valueOf;
   var inputList;
   function main(args) {
     println('Hello Kotlin/JS!');
   }
   function sample() {
-    var tmp$, tmp$_0, tmp$_1, tmp$_2, tmp$_3, tmp$_4;
-    var input1 = Kotlin.isType(tmp$ = document.getElementsByName('input1')[0], HTMLInputElement) ? tmp$ : throwCCE();
-    var input2 = Kotlin.isType(tmp$_0 = document.getElementsByName('input2')[0], HTMLInputElement) ? tmp$_0 : throwCCE();
-    if ((Kotlin.isType(tmp$_1 = document.getElementsByName('selector')[0], HTMLInputElement) ? tmp$_1 : throwCCE()).checked) {
-      tmp$_4 = Kotlin.isType(tmp$_2 = document.getElementsByName('selector')[0], HTMLInputElement) ? tmp$_2 : throwCCE();
-    }
-     else {
-      tmp$_4 = Kotlin.isType(tmp$_3 = document.getElementsByName('selector')[1], HTMLInputElement) ? tmp$_3 : throwCCE();
-    }
-    var selector1 = tmp$_4;
-    println(input1.value + input2.value + selector1.value);
+    var elements = Elements_getInstance().getElements();
+    var elementsMap = elements.getValues();
+    println(elementsMap.get_11rb$('input1') + toString(elementsMap.get_11rb$('input2')) + elementsMap.get_11rb$('selector'));
     println('Sample');
     var textArea = document.getElementsByName('textArea')[0];
     println(textArea);
@@ -114,6 +243,19 @@ var SampleKotlinJS = function (_, Kotlin) {
   Input.prototype.equals = function (other) {
     return this === other || (other !== null && (typeof other === 'object' && (Object.getPrototypeOf(this) === Object.getPrototypeOf(other) && (Kotlin.equals(this.input1, other.input1) && Kotlin.equals(this.input2, other.input2) && Kotlin.equals(this.selector1, other.selector1)))));
   };
+  Object.defineProperty(_, 'Elements', {
+    get: Elements_getInstance
+  });
+  Object.defineProperty(ElementsList, 'INPUT1', {
+    get: ElementsList$INPUT1_getInstance
+  });
+  Object.defineProperty(ElementsList, 'INPUT2', {
+    get: ElementsList$INPUT2_getInstance
+  });
+  Object.defineProperty(ElementsList, 'SELECTOR', {
+    get: ElementsList$SELECTOR_getInstance
+  });
+  _.ElementsList = ElementsList;
   Object.defineProperty(_, 'inputList', {
     get: function () {
       return inputList;

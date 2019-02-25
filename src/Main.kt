@@ -10,15 +10,9 @@ fun main (args: Array<String>) {
 }
 
 fun sample() {
-    val input1: HTMLInputElement = document.getElementsByName("input1")[0] as HTMLInputElement
-    val input2: HTMLInputElement = document.getElementsByName("input2")[0] as HTMLInputElement
-    val selector1: HTMLInputElement =
-            if ((document.getElementsByName("selector")[0] as HTMLInputElement).checked) {
-                document.getElementsByName("selector")[0] as HTMLInputElement
-            } else {
-                document.getElementsByName("selector")[1] as HTMLInputElement
-            }
-    println(input1.value + input2.value + selector1.value)
+    val elements = Elements.getElements()
+    val elementsMap = elements.getValues()
+    println(elementsMap["input1"] + elementsMap["input2"] + elementsMap["selector"])
     println("Sample")
     val textArea = document.getElementsByName("textArea")[0]
     println(textArea)
